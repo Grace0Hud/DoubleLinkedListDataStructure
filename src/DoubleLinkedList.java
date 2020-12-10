@@ -1,9 +1,13 @@
 public class DoubleLinkedList
 {
     private Node head;
+    private Node tail;
+    private int count;
+
     public DoubleLinkedList()
     {
         head = null;
+        tail = null;
     }
 
     public void addToHead(int data)
@@ -12,9 +16,38 @@ public class DoubleLinkedList
         if(head != null)
         {
             head.setPrev(node);
+        }else if(length() < 2) //if this is the first element it will be both head and tail
+        {
+            tail = node;
         }
         head = node;
     }//end add to head
+
+    public void addToEnd(int data)
+    {
+        Node node = new Node(tail, data, null);
+        if(tail != null)
+        {
+            tail.setNext(node);
+        }
+        else if(length() < 2)//if this is the first element it will be both head and tail
+        {
+            head = node;
+        }
+        tail = node;
+    }
+
+    public int length()
+    {
+        count = 0;
+        Node position = head;
+        while(position != null)
+        {
+            count ++;
+            position = position.getNext();
+        }
+        return count;
+    }
 
     public void printList()
     {

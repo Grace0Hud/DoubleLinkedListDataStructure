@@ -3,8 +3,12 @@ public class DLLDriver
     public static void main(String[] args)
     {
         DoubleLinkedList list = new DoubleLinkedList();
-        list.addToHead(78);
-        list.addToHead(54);
+
+        list.addToEnd(4);
+        list.addToEnd(3);
+        list.addToHead(1);
+        list.addToHead(2);
+
         list.printList();
     }
 }//end DLLDriver class
