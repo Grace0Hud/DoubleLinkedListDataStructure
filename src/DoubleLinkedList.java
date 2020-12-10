@@ -4,14 +4,16 @@ public class DoubleLinkedList
     {
         //instance variables
         private int data;
-        private Node link; //instance of a self-referencing class
+        private Node prev; //instance of a self-referencing class
+        private Node next;
 
         //constructors
         //public only in the class in which the private class exists
-        public Node(int data, Node link)
+        public Node(Node prev, int data, Node next)
         {
+            this.prev = prev;
             this.data = data;
-            this.link = link;
+            this.next = next;
         }
         //getters/setters
         public int getData()
@@ -19,22 +21,30 @@ public class DoubleLinkedList
             return data;
         }
 
-        public Node getLink() {
-            return link;
+        public Node getPrev() {
+            return prev;
+        }
+
+        public Node getNext() {
+            return next;
         }
 
         public void setData(int data) {
             this.data = data;
         }
 
-        public void setLink(Node link) {
-            this.link = link;
+        public void setPrev(Node prev) {
+            this.prev = prev;
+        }
+
+        public void setNext(Node next) {
+            this.next = next;
         }
 
         //toString
         public String toString()
         {
-            return "data: " + data + " links to " + link;
+            return "prev: " + prev + " -- data: " + data + " --next: " + next;
         }
 
     }//end node
