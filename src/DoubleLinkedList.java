@@ -62,6 +62,11 @@ public class DoubleLinkedList
             System.exit(0);
         }
     }//end removeFromEnd
+
+    public void setData(int old, int data)
+    {
+
+    }
     public int length()
     {
         count = 0;
@@ -74,7 +79,17 @@ public class DoubleLinkedList
         return count;
     }//end length method
 
-    public void printList()
+    public void printListFromEnd()
+    {
+        Node pos = tail;
+        while(pos != null)
+        {
+            System.out.println(pos.getData());
+            pos = pos.getPrev();
+        }
+    }
+
+    public void printListFromStart()
     {
         Node pos = head;
         while(pos != null)
