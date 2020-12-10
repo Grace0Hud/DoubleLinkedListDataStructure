@@ -35,8 +35,33 @@ public class DoubleLinkedList
             head = node;
         }
         tail = node;
-    }
+    }//end addToEnd method
 
+    public void removeFromStart()
+    {
+        if(head != null)
+        {
+            head = head.getNext();
+        }
+        else
+        {
+            System.out.println("Remove from empty list?");
+            System.exit(0);
+        }
+    }//end removeFromStart
+    public void removeFromEnd()
+    {
+        if(tail != null)
+        {
+            tail = tail.getPrev();
+            tail.setNext(null);
+        }
+        else
+        {
+            System.out.println("Remove from empty list?");
+            System.exit(0);
+        }
+    }//end removeFromEnd
     public int length()
     {
         count = 0;
@@ -47,7 +72,7 @@ public class DoubleLinkedList
             position = position.getNext();
         }
         return count;
-    }
+    }//end length method
 
     public void printList()
     {
