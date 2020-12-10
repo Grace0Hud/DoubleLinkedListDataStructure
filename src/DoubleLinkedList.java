@@ -63,9 +63,17 @@ public class DoubleLinkedList
         }
     }//end removeFromEnd
 
-    public void setData(int old, int data)
+    public void setData(int oldData, int updateData)
     {
-
+        Node position = head;
+        while(position != null)
+        {
+            if(position.getData() == oldData)
+            {
+                position.setData(updateData);
+            }
+            position = position.getNext();
+        }
     }
     public int length()
     {
