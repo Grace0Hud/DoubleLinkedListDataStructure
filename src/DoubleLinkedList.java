@@ -1,5 +1,30 @@
 public class DoubleLinkedList
 {
+    private Node head;
+    public DoubleLinkedList()
+    {
+        head = null;
+    }
+
+    public void addToHead(int data)
+    {
+        Node node = new Node(null, data, head);
+        if(head != null)
+        {
+            head.setPrev(node);
+        }
+        head = node;
+    }//end add to head
+
+    public void printList()
+    {
+        Node pos = head;
+        while(pos != null)
+        {
+            System.out.println(pos.getData());
+            pos = pos.getNext();
+        }
+    }
     private static class Node
     {
         //instance variables
@@ -46,6 +71,5 @@ public class DoubleLinkedList
         {
             return "prev: " + prev + " -- data: " + data + " --next: " + next;
         }
-
     }//end node
 }//end double linked list
