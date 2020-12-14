@@ -12,7 +12,7 @@ public class DLLDriver
         list.addToHead(2);
         list.addToHead(1);
 
-        System.out.println("\n-----Prints list from 3 to start using getNext()------");
+        System.out.println("-----Prints list from 3 to start using getNext()------");
         Integer data = 3;
         while(list.isInList(data))
         {
@@ -29,9 +29,12 @@ public class DLLDriver
         }//end while
 
         //above methods can also be used to access and change data;
-
+        System.out.println("\nchanges 1 to 20 and prints it out: ");
+        list.setData(list.getPrev(2), 20);
+        // or to simply print out data
+        System.out.println(list.getPrev(2));
         //print lists
-        System.out.println("----List from Start----");
+        System.out.println("\n----List from Start----");
         list.printListFromStart();
         System.out.println("\n----List from End----");
         list.printListFromEnd();
