@@ -38,6 +38,10 @@ public class DLLDriver
         list.printListFromStart();
         System.out.println("\n----List from End----");
         list.printListFromEnd();
+        //add/remove data at specific point
+        System.out.println("\nAdding 12 in between 2 and 3");
+        list.addBetween(2, 3, 12);
+        list.printListFromStart();
         //remove data
         System.out.println("\nRemoved data from end: ");
         list.removeFromEnd();

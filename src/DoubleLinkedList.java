@@ -38,6 +38,12 @@ public class DoubleLinkedList
         tail = node;
     }//end addToEnd method
 
+    public void addBetween(int prev, int next, int data)
+    {
+        Node node = new Node(getDataPosition(prev), data, getDataPosition(next));
+        getDataPosition(prev).setNext(node);
+        getDataPosition(next).setPrev(node);
+    }
     //--------------------------methods to remove from list -------------------------------
     public void removeFromStart()
     {
