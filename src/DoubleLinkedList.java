@@ -112,11 +112,7 @@ public class DoubleLinkedList
 
     private Node getDataPosition(int data)
     {
-        if(!isInList(data))
-        {
-            return null;
-        }
-        else
+        if(isInList(data))
         {
             Node position = head;
             while(position != null)
