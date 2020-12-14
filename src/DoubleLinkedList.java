@@ -89,12 +89,8 @@ public class DoubleLinkedList
 
     public int getNext(int data)
     {
-        if(getDataPosition(data) != null)
+        if(getDataPosition(data) != null && getDataPosition(data) != tail)
         {
-            if(getDataPosition(data) == tail)
-            {
-                return -1;
-            }
             return getDataPosition(data).getNext().getData();
         }
         return -1;
