@@ -4,12 +4,25 @@ public class DLLDriver
     {
         DoubleLinkedList list = new DoubleLinkedList();
 
+
         //add data to list
         list.addToEnd(4);
         list.addToEnd(5);
         list.addToHead(3);
         list.addToHead(2);
         list.addToHead(1);
+
+        int count = 0;
+        int data =1;
+        while(count < list.length())
+        {
+            System.out.println(data);
+           data = list.getNext(data);
+           count ++;
+        }
+
+       // list.printListFromStart();
+        /*
         //print lists
         System.out.println("----List from Start----");
         list.printListFromStart();
@@ -26,5 +39,7 @@ public class DLLDriver
         System.out.println("\nSetting 2 to 10");
         list.setData(2, 10);
         list.printListFromStart();
+
+         */
     }
 }//end DLLDriver class

@@ -87,6 +87,54 @@ public class DoubleLinkedList
         return count;
     }//end length method
 
+    public int getNext(int data)
+    {
+        if(getDataPosition(data) != null)
+        {
+            if(getDataPosition(data) == tail)
+            {
+                return -1;
+            }
+            return getDataPosition(data).getNext().getData();
+        }
+        return -1;
+    }//returns the next data int he list
+
+    public boolean isInList(int data)
+    {
+        Node position = head;
+        while(position != null)
+        {
+            if(position.getData() == data)
+            {
+                return true;
+            }
+            position = position.getNext();
+        }
+        return false;
+    }
+
+    private Node getDataPosition(int data)
+    {
+        if(!isInList(data))
+        {
+            return null;
+        }
+        else
+        {
+            Node position = head;
+            while(position != null)
+            {
+                if(position.getData() == data)
+                {
+                    return position;
+                }
+                position = position.getNext();
+            }
+        }
+        return null;
+    }
+
     public void printListFromEnd()
     {
         Node pos = tail;
