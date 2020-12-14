@@ -71,6 +71,12 @@ public class DoubleLinkedList
         }
     }//end removeFromEnd
 
+    public void remove(int data)
+    {
+      Node node =  getDataPosition(data);
+      node.getPrev().setNext(node.getNext());
+      node.getNext().setPrev(node.getPrev());
+    }
     //-------------------method to modify data----------------------
     public void setData(int oldData, int updateData)
     {

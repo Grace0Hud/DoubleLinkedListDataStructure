@@ -49,6 +49,9 @@ public class DLLDriver
         System.out.println("\nRemoved data from start: ");
         list.removeFromStart();
         list.printListFromStart();
+        System.out.println("\nRemove 12: ");
+        list.remove(12);
+        list.printListFromStart();
         //setData
         System.out.println("\nSetting 2 to 10");
         list.setData(2, 10);
