@@ -13,24 +13,22 @@ public class DLLDriver
         list.addToHead(1);
 
         System.out.println("\n-----Prints list from 3 to start using getNext()------");
-        int count = 0;
         Integer data = 3;
-        while(data != null)
+        while(list.isInList(data))
         {
             System.out.println(data);
             data = list.getPrev(data);
-            count++;
         }
-        
+
         System.out.println("\n-----Prints list from 3 to end using getNext()------");
-        count = 0;
         data = 3;
-        while(data != null)
+        while(list.isInList(data))
         {
            System.out.println(data);
            data = list.getNext(data);
-           count ++;
         }//end while
+
+        //above methods can also be used to access and change data;
 
         //print lists
         System.out.println("----List from Start----");

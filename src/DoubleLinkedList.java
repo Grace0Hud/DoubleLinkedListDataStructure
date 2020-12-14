@@ -116,8 +116,12 @@ public class DoubleLinkedList
 
     //--------------------- brain/helper methods -------------------
     //this is kept public because it has possible uses outside of the function
-    public boolean isInList(int data)
+    public boolean isInList(Integer data)
     {
+        if(data == null)
+        {
+            return false;
+        }
         Node position = head;
         while(position != null)
         {
