@@ -12,15 +12,25 @@ public class DLLDriver
         list.addToHead(2);
         list.addToHead(1);
 
+        System.out.println("\n-----Prints list from 3 to start using getNext()------");
         int count = 0;
-        int data =1;
-        while(count < list.length())
+        Integer data = 3;
+        while(data != null)
         {
             System.out.println(data);
+            data = list.getPrev(data);
+            count++;
+        }
+        
+        System.out.println("\n-----Prints list from 3 to end using getNext()------");
+        count = 0;
+        data = 3;
+        while(data != null)
+        {
+           System.out.println(data);
            data = list.getNext(data);
            count ++;
-        }
-
+        }//end while
 
         //print lists
         System.out.println("----List from Start----");

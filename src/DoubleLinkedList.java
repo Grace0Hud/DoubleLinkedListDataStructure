@@ -75,16 +75,24 @@ public class DoubleLinkedList
     }
 
     //------------------methods to access data in the list-----------------------
-    //     - can also be used to print out data
-    public int getNext(int data)
+    //     - can also be used to print out
+    //     - can be used to transverse the list from any point in the list
+    public Integer getNext(int data)
     {
         if(getDataPosition(data) != null && getDataPosition(data) != tail)
         {
             return getDataPosition(data).getNext().getData();
         }
-        return -1;
+        return null;
     }//returns the next data int he list
-
+    public Integer getPrev(int data)
+    {
+        if(getDataPosition(data) != null && getDataPosition(data) != head)
+        {
+            return getDataPosition(data).getPrev().getData();
+        }
+        return null;
+    }///end getprevious
     //------------------methods to print out data-------------------
     public void printListFromEnd()
     {
