@@ -10,6 +10,7 @@ public class DoubleLinkedList
         tail = null;
     }
 
+   //------------------- methods to add to list ----------------------
     public void addToHead(int data)
     {
         Node node = new Node(null, data, head);
@@ -37,6 +38,7 @@ public class DoubleLinkedList
         tail = node;
     }//end addToEnd method
 
+    //--------------------------methods to remove from list -------------------------------
     public void removeFromStart()
     {
         if(head != null)
@@ -63,6 +65,7 @@ public class DoubleLinkedList
         }
     }//end removeFromEnd
 
+    //-------------------method to modify data----------------------
     public void setData(int oldData, int updateData)
     {
         if(isInList(oldData))
@@ -70,18 +73,9 @@ public class DoubleLinkedList
             getDataPosition(oldData).setData(updateData);
         }
     }
-    public int length()
-    {
-        count = 0;
-        Node position = head;
-        while(position != null)
-        {
-            count ++;
-            position = position.getNext();
-        }
-        return count;
-    }//end length method
 
+    //------------------methods to access data in the list-----------------------
+    //     - can also be used to print out data
     public int getNext(int data)
     {
         if(getDataPosition(data) != null && getDataPosition(data) != tail)
@@ -91,6 +85,29 @@ public class DoubleLinkedList
         return -1;
     }//returns the next data int he list
 
+    //------------------methods to print out data-------------------
+    public void printListFromEnd()
+    {
+        Node pos = tail;
+        while(pos != null)
+        {
+            System.out.println(pos.getData());
+            pos = pos.getPrev();
+        }
+    }//end print list from end
+
+    public void printListFromStart()
+    {
+        Node pos = head;
+        while(pos != null)
+        {
+            System.out.println(pos.getData());
+            pos = pos.getNext();
+        }
+    }//end print list from start
+
+    //--------------------- brain/helper methods -------------------
+    //this is kept public because it has possible uses outside of the function
     public boolean isInList(int data)
     {
         Node position = head;
@@ -103,7 +120,20 @@ public class DoubleLinkedList
             position = position.getNext();
         }
         return false;
-    }
+    }//end is in list
+
+    //kept public for same reasons as above
+    public int length()
+    {
+        count = 0;
+        Node position = head;
+        while(position != null)
+        {
+            count ++;
+            position = position.getNext();
+        }
+        return count;
+    }//end length method
 
     private Node getDataPosition(int data)
     {
@@ -122,25 +152,7 @@ public class DoubleLinkedList
         return null;
     }
 
-    public void printListFromEnd()
-    {
-        Node pos = tail;
-        while(pos != null)
-        {
-            System.out.println(pos.getData());
-            pos = pos.getPrev();
-        }
-    }
-
-    public void printListFromStart()
-    {
-        Node pos = head;
-        while(pos != null)
-        {
-            System.out.println(pos.getData());
-            pos = pos.getNext();
-        }
-    }
+    //-----------------Node construction private class---------------------------
     private static class Node
     {
         //instance variables
