@@ -21,8 +21,7 @@ public class DLLDriver
            count ++;
         }
 
-       // list.printListFromStart();
-        /*
+
         //print lists
         System.out.println("----List from Start----");
         list.printListFromStart();
@@ -40,6 +39,5 @@ public class DLLDriver
         list.setData(2, 10);
         list.printListFromStart();
 
-         */
     }
 }//end DLLDriver class
